@@ -3,12 +3,12 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Mary Ashley Samuelson.
 """
 
 ########################################################################
 #
-# TODO: 1. PUT YOUR NAME IN THE ABOVE LINE and...
+# DONE: 1. PUT YOUR NAME IN THE ABOVE LINE and...
 #
 #   Allow this file to use the rosegraphics.py file by marking the src
 #   directory as a "Sources Root".  Do that by right clicking on the src folder,
@@ -19,6 +19,7 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #
 #   Then run this module and look for more TO DO's later in the file.
 ########################################################################
+
 
 import rosegraphics as rg
 import random
@@ -33,7 +34,10 @@ def main():
     # A TurtleWindow works "behind the scenes" to enable Turtle movement
     window = rg.TurtleWindow()
 
+
     turtle1()
+    turtle4()
+    turtle5()
     turtle3()
     turtle2()
     turtle2()
@@ -103,9 +107,51 @@ def turtle3():
     maja.end_fill()
 
 
+def turtle4():
+    stanley = rg.SimpleTurtle()
+    stanley.pen = rg.Pen('turquoise', 4)
+
+    stanley.right(90)
+    stanley.forward(100)
+    stanley.draw_regular_polygon(7, 60)
+    stanley.draw_circle(50)
+
+
+def turtle5():
+    sally = rg.SimpleTurtle()
+    sally.pen_up()
+    sally.go_to(rg.Point(random.randrange(-250, 250), random.randrange(-200, 0)))
+    sally.pen_down()
+    sally.pen = rg.Pen('Magenta', 7)
+    sally.speed = 10
+
+    for i in range(6):
+        sally.draw_circle(50)
+        sally.pen_up()
+        sally.right(60)
+        sally.forward(50)
+        sally.pen_down()
+
+
+    dave = rg.SimpleTurtle()
+    dave.pen = rg.Pen('tomato', 8)
+    dave.speed = 10
+    color = ['Hot Pink','salmon','lemon chiffon','lime green','sea green','MediumAquamarine','PowderBlue','orchid']
+
+    for i in range (8):
+        dave.left(45)
+        dave.forward(50)
+        dave.pen = rg.Pen(color[i], 8)
+        dave.right(45)
+        dave.draw_circle(30)
+        dave.pen = rg.Pen('tomato', 8)
+        dave.right(45)
+        dave.forward(50)
+
+
 ########################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   READ the code above.  Be sure you understand:
 #     -- How many functions are defined above?
 #           (Answer: 4)
@@ -137,7 +183,7 @@ def turtle3():
 
 ########################################################################
 #
-# TODO: 3.
+# DONE: 3.
 #   Define another function,
 #   immediately below the end of the definition of   turtle3   above.
 #   Name your new function   turtle4.
@@ -167,7 +213,7 @@ def turtle3():
 
 ########################################################################
 #
-# TODO: 4.
+# DONE: 4.
 #   Add a line to   main   that CALLS your new function immediately
 #   AFTER  main  calls turtle1.  So:
 #     -- the SimpleTurtle from turtle1 should move,
@@ -183,7 +229,7 @@ def turtle3():
 
 ########################################################################
 #
-# TODO: 5.
+# DONE: 5.
 #   The previous two TODOs IMPLEMENTED a function (TO DO 3)
 #   and TESTED that function (TO DO 4).
 #
